@@ -1,0 +1,65 @@
+import java.awt.*;
+import java.applet.*;
+import java.awt.event.*;
+/*
+<applet code="Largenumber.java"width=300 height=400>
+</applet>
+*/
+
+public class Largenumber extends Applet implements ActionListener
+{
+TextField t1,t2,t3,t4;
+Button b1;
+Label l1;
+Label l2;
+Label l3;
+
+public void init()
+{
+l1=new Label("1st Number:");
+l2=new Label("2nd Number:");
+l3=new Label("3rd Number:");
+
+setLayout(null);
+l1.setBounds(10,25,20,20);
+t1=new TextField(15);
+l2.setBounds(10,50,50,20);
+t1.setBounds(100,25,50,20);
+t2=new TextField(15);
+t2.setBounds(100,50,50,20);
+l3.setBounds(10,75,50,20);
+t3=new TextField(15);
+t3.setBounds(100,75,50,20);
+t4=new TextField("Ans");
+t4.setBounds(175,40,50,20);
+b1=new Button("Find");
+b1.setBounds(175,65,50,30);
+
+add(l1);
+add(l2);
+add(l3);
+add(t1);
+add(t2);
+add(t3);
+add(t4);
+add(b1);
+b1.addActionListener(this);
+}
+public void actionPerformed(ActionEvent e)
+{
+int i,j,k;
+
+i=Integer.parseInt(t1.getText());
+j=Integer.parseInt(t2.getText());
+k=Integer.parseInt(t3.getText());
+if(i<j)
+{
+if(j<k)
+t4.setText(""+k);
+else
+t4.setText(""+j);
+}
+else
+t4.setText(""+i);
+}
+}
